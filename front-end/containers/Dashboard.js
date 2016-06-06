@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import Cell from '../components/cell';
 import ReactD3 from 'react-d3-components';
-var AreaChart = ReactD3.AreaChart;
+var LineChart = ReactD3.LineChart;
 var moment = require('moment');
 
 export default class Content extends Component {
@@ -123,7 +123,7 @@ export default class Content extends Component {
         if (this.state.solar && this.state.cloud) {
             if (this.state.solar.data.values.length > 0 && this.state.cloud.data.values.length > 0) {
             footer = <div className="dashboard__footer">
-                        <AreaChart
+                        <LineChart
                                 data={ this.state.cloud.data }
                                 width={ width / 2 }
                                 height={ (height - 40) * heightRatio }
@@ -133,7 +133,7 @@ export default class Content extends Component {
                                 yAxis={{ label: 'Cloud coverage (100% — clear sky)' }}
                             />
 
-                            <AreaChart
+                        <LineChart
                                 data={this.state.solar.data}
                                 width={ width / 2 }
                                 height={ (height - 40) * heightRatio }

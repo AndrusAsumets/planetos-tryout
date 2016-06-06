@@ -66,6 +66,10 @@ text {
     font-size: 13px;
 }
 
+.line {
+    stroke: $border-color;
+}
+
 html, body {
     margin: 0;
     padding: 0;
@@ -78,7 +82,6 @@ html, body {
     background-color: $background-color;
     color: black;
     overflow-x: hidden;
-
 }
 
 #root {
