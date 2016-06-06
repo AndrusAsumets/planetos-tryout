@@ -51,7 +51,7 @@ $hover-color: #4dbfff;
 }
 
 .area {
-    fill: $id-color;
+    fill: $border-color;
 }
 
 text {
@@ -176,7 +176,7 @@ html, body {
     .dashboard__footer {
         display: flex;
         padding: 20px 0 0 20px;
-        font-size: 15px;
+        font-size: 12px;
         font-family: 'AvenirLTStd-Heavy', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif';
         overflow: hidden;
     }
