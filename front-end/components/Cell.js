@@ -2,27 +2,23 @@ import React, { Component, PropTypes } from 'react';
 
 export default class Content extends Component {
     render() {
-        let { wattage, voltage, i } = this.props;
+        let { wattage, voltage, id } = this.props;
 
         let wattageStyle = {};
         let voltageStyle = {};
 
         if (wattage == 0) {
-            wattageStyle.backgroundColor = 'red';
-            wattageStyle.color = 'white';
-            wattageStyle.border = '1px solid rgba(0, 0, 0, 1)';
+            wattageStyle.color = 'red';
         }
 
         if (voltage == 0) {
-            voltageStyle.backgroundColor = 'red';
-            voltageStyle.color = 'white';
-            voltageStyle.border = '1px solid rgba(0, 0, 0, 1)';
+            voltageStyle.color = 'red';
         }
 
         return (
             <div className="dashboard__cell">
                 <div className="dashboard__cell_inner id">
-                    { i }
+                    { id }
                 </div>
                 <div className="dashboard__cell_inner wattage" style={ wattageStyle }>
                     { Math.round(wattage * 100) / 100 }

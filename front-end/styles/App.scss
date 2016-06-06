@@ -11,13 +11,13 @@
 //light
 $text-color: black;
 $text-color-reverse: black;
-$background-color: white;
+$background-color: #f3f3f3;
 $border-color: black;
 $extra-color: black;
 $menu-color: none;
 $cell-color: black;
 $id-color: #F5F5F5;
-$hover-color: #4dbfff;
+$hover-color: #ffd5fc;
 
 @mixin center {
 	display: -webkit-flex;
@@ -51,15 +51,12 @@ $hover-color: #4dbfff;
 }
 
 .area {
-    fill: $border-color;
+    fill: #d5f0ff;
+    stroke: $border-color;
 }
 
 text {
     fill: $text-color-reverse;
-}
-
-.area:hover {
-	fill: $hover-color;
 }
 
 .label {
@@ -133,15 +130,11 @@ html, body {
             	transition: all 0.1s;
             }
 
-            .dashboard__cell_inner:hover {
-                background-color: $hover-color !important;
-                color: white !important;
-            }
-
             .dashboard__cell_inner.id {
                 width: 20%;
                 background-color: $id-color;
                 color: $text-color-reverse;
+                font-size: 12px;
             }
 
             .dashboard__cell_inner.wattage {
@@ -203,6 +196,10 @@ html, body {
                 .dashboard__cell_inner.wattage,
                 .dashboard__cell_inner.voltage {
                     font-size: 12px;
+                }
+
+                .dashboard__cell_inner.id {
+                    font-size: 8px;
                 }
             }
         }

@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import Cell from '../components/cell';
 import ReactD3 from 'react-d3-components';
-var LineChart = ReactD3.LineChart;
+var LineChart = ReactD3.AreaChart;
 var moment = require('moment');
 
 export default class Content extends Component {
@@ -92,7 +92,6 @@ export default class Content extends Component {
         }
 
         let cells = [];
-        let wattages = [];
         const PANEL_COUNT = 30;
         let totalWattage = 0;
 
@@ -100,13 +99,12 @@ export default class Content extends Component {
             if (energy[2] === '-') energy[2] = '0';
             if (energy[8] === '-') energy[10] = '0';
 
-            let wattage = parseFloat(energy[2]);
-            let voltage = parseFloat(energy[8]) / 30;
-
-            wattages = f(Math.ceil(wattage), getRandomInt(1, Math.ceil(wattage / PANEL_COUNT)), PANEL_COUNT);
+            let wattages = parseFloat(energy[2]);
+            let voltages = parseFloat(energy[8]);
 
             for(var i = 0; i < PANEL_COUNT; i++) {
-                wattage = wattages[i];
+                let wattage = wattages / PANEL_COUNT;
+                let voltage = voltages / PANEL_COUNT;
 
                 if (wattage < 0 || !wattage) wattage = 0;
                 if (voltage < 0 || !voltage) voltage = 0;
@@ -161,7 +159,7 @@ export default class Content extends Component {
                             Energy (kWh)
                         </div>
                         <div className="dashboard__cell_inner voltage">
-                            Voltage (V)
+                            Power (V)
                         </div>
                     </div>
 
@@ -173,7 +171,7 @@ export default class Content extends Component {
                             Energy (kWh)
                         </div>
                         <div className="dashboard__cell_inner voltage">
-                            Voltage (V)
+                            Power (V)
                         </div>
                     </div>
 
@@ -185,12 +183,12 @@ export default class Content extends Component {
                             Energy (kWh)
                         </div>
                         <div className="dashboard__cell_inner voltage">
-                            Voltage (V)
+                            Power (V)
                         </div>
                     </div>
 
                     {[...cells].map((x, i) =>
-                         <Cell key = { i } i={ i + 1 } wattage={ cells[i].wattage } voltage={ cells[i].voltage } />
+                         <Cell key = { i } id={ i + 1 } wattage={ cells[i].wattage } voltage={ cells[i].voltage } />
                      )}
                 </div>
 
