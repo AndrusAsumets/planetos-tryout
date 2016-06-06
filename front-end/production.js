@@ -11,7 +11,7 @@ app.use(gzippo.staticGzip(__dirname + '/public'));
 app.use(gzippo.compress());
 
 app.get('/', function(req, res) {
-    res.sendFile('production.html');
+    res.sendFile(path.join(__dirname, 'production.html'));
 });
 
 var server = http.createServer(app);
