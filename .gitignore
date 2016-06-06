@@ -1,0 +1,14 @@
+back-end/data/
+front-end/node_modules/
+back-end/node_modules/
+.env
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db.DS_Store

@@ -1,0 +1,250 @@
+@font-face {
+  font-family: 'AvenirLTStd-Book.otf';
+  src: url('fonts/AvenirLTStd-Book.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'AvenirLTStd-Heavy';
+  src: url('fonts/AvenirLTStd-Heavy.otf') format('opentype');
+}
+
+//light
+$text-color: black;
+$text-color-reverse: black;
+$background-color: white;
+$border-color: black;
+$extra-color: black;
+$menu-color: none;
+$cell-color: black;
+$id-color: #F5F5F5;
+$hover-color: #4dbfff;
+
+@mixin center {
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: row;
+	flex-direction: row;
+	-webkit-align-items: center;
+	align-items: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+}
+
+@mixin hand {
+	cursor: pointer;
+	cursor: hand;
+}
+
+@mixin unselectable {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+}
+
+*, *:before, *:after
+{
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.area {
+    fill: $id-color;
+}
+
+text {
+    fill: $text-color-reverse;
+}
+
+.area:hover {
+	fill: $hover-color;
+}
+
+.label {
+    font-size: 13px;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'AvenirLTStd-Heavy', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif';
+    background-color: #314458; // tumesinine
+    background-color: #343d4d; // PlanetOS
+    //background-color: #252525;
+    background-color: $background-color;
+    color: black;
+    overflow-x: hidden;
+
+}
+
+#root {
+    height: 100%;
+}
+
+.dashboard {
+    height: 100%;
+    margin: 0 20px 0 20px;
+
+    .dashboard__header {
+        @include center;
+        @include unselectable;
+
+        height: 8%;
+        padding: 16px;
+        font-size: 24px;
+        font-weight: bold;
+
+        span {
+            margin-left: 3px;
+        }
+    }
+
+    .dashboard__grid {
+        height: 50%;
+        display: flex;
+        flex-flow: row wrap;
+        border: 1px solid $border-color;
+
+        .dashboard__cell {
+            display: flex;
+            height: calc(95% / 10);
+            width: calc(100% / 3);
+            border: 0 solid $border-color;
+
+            .dashboard__cell_inner {
+                @include center;
+                @include unselectable;
+
+                height: 100%;
+                font-size: 16px;
+                background-color: $menu-color;
+                color: $cell-color;
+                border: 1px solid $border-color;
+                -moz-transition: all 0.1s;
+            	-webkit-transition: all 0.1s;
+            	-o-transition: all 0.1s;
+            	transition: all 0.1s;
+            }
+
+            .dashboard__cell_inner:hover {
+                background-color: $hover-color !important;
+                color: white !important;
+            }
+
+            .dashboard__cell_inner.id {
+                width: 20%;
+                background-color: $id-color;
+                color: $text-color-reverse;
+            }
+
+            .dashboard__cell_inner.wattage {
+                width: 40%;
+                background-color: $menu-color;
+                border-left: 1px solid $border-color;
+                border-right: 1px solid $border-color;
+            }
+
+            .dashboard__cell_inner.voltage {
+                width: 40%;
+                background-color: $menu-color;
+            }
+        }
+
+        .dashboard__cell.menu {
+            height: calc(5%);
+            font-family: 'AvenirLTStd-Book.otf', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif';
+
+            .dashboard__cell_inner.wattage {
+                border-left: 1px solid $border-color;
+                border-right: 1px solid $border-color;
+            }
+
+            .dashboard__cell_inner.id,
+            .dashboard__cell_inner.wattage,
+            .dashboard__cell_inner.voltage {
+                background-color: $menu-color;
+                color: $text-color-reverse;
+                font-size: 14px;
+            }
+        }
+    }
+
+    .dashboard__footer {
+        display: flex;
+        padding: 20px 0 0 20px;
+        font-size: 15px;
+        font-family: 'AvenirLTStd-Heavy', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif';
+        overflow: hidden;
+    }
+}
+
+@media only screen and (min-width: 0em) and (max-width: 64em) {
+    .dashboard {
+        margin: 0 20px 20px 20px;
+
+        .dashboard__grid {
+            height: 89%;
+        }
+
+        .dashboard__header {
+            font-size: 20px;
+        }
+
+        .dashboard__grid {
+            .dashboard__cell.menu {
+                .dashboard__cell_inner.id,
+                .dashboard__cell_inner.wattage,
+                .dashboard__cell_inner.voltage {
+                    font-size: 12px;
+                }
+            }
+        }
+
+        .dashboard__footer {
+            display: block;
+            font-size: 16px;
+            margin: 0;
+            padding: 20px 0 0 0;
+
+            div {
+                border: 1px solid $border-color;
+            }
+
+            div:nth-child(2) {
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
+
+@media (max-width: 40em) {
+    .dashboard {
+        .dashboard__header {
+            font-size: 14px;
+        }
+
+        .dashboard__grid {
+            .dashboard__cell {
+                .dashboard__cell_inner {
+                    font-size: 10px;
+                }
+            }
+            .dashboard__cell.menu {
+                .dashboard__cell_inner.id,
+                .dashboard__cell_inner.wattage,
+                .dashboard__cell_inner.voltage {
+                    font-size: 8px;
+                }
+            }
+        }
+
+        .dashboard__footer {
+            font-size: 7px;
+        }
+    }
+}
