@@ -9,7 +9,7 @@ import { PlanetOS } from './src/planetOS';
 import fs from 'fs';
 import path from 'path';
 
-const PORT = 4000;
+const PORT = process.env.PORT || 4000;
 const INTERVAL = 3 * 60 * 60 * 1000;
 const queries = [
     {
