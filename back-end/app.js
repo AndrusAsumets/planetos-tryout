@@ -53,7 +53,7 @@ function fetch(queries) {
 
         data = JSON.parse(fs.readFileSync(FILE_PATH, 'utf8'));
 
-        if ((new Date).getTime() - INTERVAL > data.time) {
+        if ((new Date).getTime() - INTERVAL + 1 > data.time) {
             const RESPONSE = await PlanetOS(data);
 
             if (RESPONSE.error) return console.log(RESPONSE.error);
