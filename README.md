@@ -68,7 +68,7 @@ Run it in production:
 npm run production 
 ```
 
-Optionally, you can also change local PORT variables for both front-end and back-end by including: 
+Optionally, you can also change local PORT variable for both front-end and back-end by including: 
 ```
 PORT=<YOUR_PORT_HERE>  
 ```
