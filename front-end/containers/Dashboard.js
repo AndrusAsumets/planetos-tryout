@@ -156,10 +156,10 @@ export default class Content extends Component {
                             ID
                         </div>
                         <div className="dashboard__cell_inner wattage">
-                            Energy (kWh)
+                            Power (kWh)
                         </div>
                         <div className="dashboard__cell_inner voltage">
-                            Power (V)
+                            Voltage (V)
                         </div>
                     </div>
 
@@ -168,10 +168,10 @@ export default class Content extends Component {
                             ID
                         </div>
                         <div className="dashboard__cell_inner wattage">
-                            Energy (kWh)
+                            Power (kWh)
                         </div>
                         <div className="dashboard__cell_inner voltage">
-                            Power (V)
+                            Voltage (V)
                         </div>
                     </div>
 
@@ -180,10 +180,10 @@ export default class Content extends Component {
                             ID
                         </div>
                         <div className="dashboard__cell_inner wattage">
-                            Energy (kWh)
+                            Power (kWh)
                         </div>
                         <div className="dashboard__cell_inner voltage">
-                            Power (V)
+                            Voltage (V)
                         </div>
                     </div>
 
