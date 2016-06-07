@@ -37,7 +37,7 @@ Now open http://localhost:3000 in your browser and see the magic happening right
 ### Installation (production) 
 
 Create .env file under planetos-tryout/front-end/ and insert back-end's host and ip (those values injected into build.min.js after build process):  
-SERVER_HOST={SERVER_HOST_HERE}
+SERVER_HOST={SERVER_HOST_HERE}  
 SERVER_PORT={SERVER_PORT_HERE}  
 
 Build it: 
