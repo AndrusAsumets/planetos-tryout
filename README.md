@@ -1,4 +1,4 @@
-# This is a source code for an UI/UX engineer post in PlanetOS.
+# This is a source code of a dashboard for an UI/UX engineer post in PlanetOS.
 
 The project has been divided into two separate folders (front-end and back-end). The role of the front-end is visualize energy production coming through two separate API-s, and has been developed using React.js using a FLUX pattern (redux). In development mode it runs on WebPack and is served by Node.js's Express framework. For production use, it needs to be pre-built (there's introductions on how to do it on production tab under 'Installation' section). Back-end has been written in JavaScript and runs on Node.js, and is being served by Koa.js framework.
 
@@ -38,7 +38,7 @@ Now open http://localhost:3000 in your browser and see the magic happening right
 
 Create .env file under planetos-tryout/front-end/ and insert back-end's host and ip (those values injected into build.min.js after build process):
 SERVER_HOST=<SERVER_HOST_HERE>
-SERVER_PORT=<SERVER_PORT_HERE>
+SERVER_PORT=<SERVER_PORT_HERE> 
 
 Build it:
 npm run build
