@@ -115,8 +115,6 @@ export default class Content extends Component {
             }
         }
 
-        cells = shuffle(cells);
-
         let footer = <div></div>;
         if (this.state.solar && this.state.cloud) {
             if (this.state.solar.data.values.length > 0 && this.state.cloud.data.values.length > 0) {
@@ -197,44 +195,6 @@ export default class Content extends Component {
         )
     }
 }
-
-// i - an integer multiple of k
-// k - an integer
-// n - a valid array length
-// returns an array of length n containing integer multiples of k
-// such that the elements sum to i and the array is sorted,
-// contains the minimum number of unique elements necessary to
-// satisfy the first condition, the elements chosen are the
-// closest together that satisfy the first condition.
-function f(i, k, n) {
-  var minNumber = (((i / k) / n) | 0) * k;
-  var maxNumber = minNumber + k;
-  var numMax = (i - (minNumber * n)) / k;
-  var nums = [];
-  for (var i = 0; i < n - numMax; ++i) {
-    nums[i] = minNumber;
-  }
-  for (var i = n - numMax; i < n; ++i) {
-    nums[i] = maxNumber;
-  }
-  return nums;
-}
-
-function getRandomInt(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
-function shuffle(array) {
-    for (var i = array.length - 1; i > 0; i--) {
-        var j = Math.floor(Math.random() * (i + 1));
-        var temp = array[i];
-        array[i] = array[j];
-        array[j] = temp;
-    }
-    return array;
-}
-
-function isFloat(x) { return !!(x % 1); }
 
 function percent(array) {
     var i, max=0;
