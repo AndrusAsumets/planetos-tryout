@@ -21,7 +21,7 @@ npm run development
 For back-end open new shell tab and cd into the root directory of the project: 
 cd planetos-tryout/back-end/ 
 
-Create an .env file inside of the root directory of back-end for a PlanetOS API key and enter: 
+Create an .env file inside of the root directory of back-end for a PlanetOS API key and enter:  
 PLANETOS_API_KEY=<YOUR_API_KEY_HERE> 
 
 Install relevant modules: 
@@ -36,7 +36,7 @@ Now open http://localhost:3000 in your browser and see the magic happening right
 
 ### Installation (production) 
 
-Create .env file under planetos-tryout/front-end/ and insert back-end's host and ip (those values injected into build.min.js after build process): 
+Create .env file under planetos-tryout/front-end/ and insert back-end's host and ip (those values injected into build.min.js after build process):  
 SERVER_HOST=<SERVER_HOST_HERE> 
 SERVER_PORT=<SERVER_PORT_HERE> 
 
@@ -46,8 +46,8 @@ npm run build
 Run it in production: 
 npm run production 
 
-Optionally, you can also change local PORT variables for both front-end and back-end by including: 
-PORT=<YOUR_PORT_HERE> 
-into relevant .env files. 
+Optionally, you can also change local PORT variables for both front-end and back-end by including:  
+PORT=<YOUR_PORT_HERE>  
+into relevant .env files.  
 
 This setup has been tested with Node.js v6.1.0 and v5.2.0. 
