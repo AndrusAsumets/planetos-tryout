@@ -1,8 +1,8 @@
-# This is a source code of a dashboard for an UI/UX engineer post in PlanetOS. 
+# This is a source code of a dashboard for an UI/UX engineer post in Planet OS. 
 
 The project has been divided into two separate folders (front-end and back-end). The role of the front-end is visualize energy production coming through two separate API-s, and has been developed using React.js using a FLUX pattern (redux). In development mode it runs on WebPack and is served by Node.js's Express framework. For production use, it needs to be pre-built (there's introductions on how to do it on production tab under 'Installation' section). Back-end has been written in JavaScript and runs on Node.js, and is being served by Koa.js framework. 
 
-The dashboard queries back-end for both power and voltage data as it crawls this link: http://pvoutput.org/intraday.jsp?id=6577&sid=7367 (A solar farm near Sandersdorf, Germany, that consists of 30 panels) in 10 second intervals. Secondly, it queries PlanetOS's api for cloud coverage and solar activity corresponding to the location with a 24hour resolution, and caches it into a file for the usage of front-end. After receiving data from the back-end it will is use it draw a grid for power and voltage and two separate graphs for cloud and solar data using d3.js's component for React.js. 
+The dashboard queries back-end for both power and voltage data as it crawls this link: http://pvoutput.org/intraday.jsp?id=6577&sid=7367 (A solar farm near Sandersdorf, Germany, that consists of 30 panels) in 10 second intervals. Secondly, it queries Planet OS's api for cloud coverage and solar activity corresponding to the location with a 24hour resolution, and caches it into a file for the usage of front-end. After receiving data from the back-end it will is use it draw a grid for power and voltage and two separate graphs for cloud and solar data using d3.js's component for React.js. 
 
 
 ### Installation (development) 
@@ -31,7 +31,7 @@ For back-end open new shell tab and cd into the root directory of the project:
 cd planetos-tryout/back-end/ 
 ```
 
-Create an .env file inside of the root directory of back-end for a PlanetOS API key and enter:
+Create an .env file inside of the root directory of back-end for a Planet OS API key and enter:
 ```
 PLANETOS_API_KEY={YOUR_API_KEY_HERE}  
 ```
